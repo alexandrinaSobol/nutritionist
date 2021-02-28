@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="header-image">
+	<h2>Register</h2>
+</div>
+<div class="container pt-60">
+  <div class="row">
+    <form class="col s12" (submit)="userRegister()">
+      <div class="row">
+        <div class="input-field col s6">
+          <input [(ngModel)]="username" id="username" name="username" type="text" placeholder="Username" class="validate">
+        </div>
+        <div class="input-field col s6">
+          <input [(ngModel)]="fullname" id="fullname" name="fullname" placeholder="Full Name" type="text" class="validate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input [(ngModel)]="pass" id="pass" name="pass" placeholder="Password" type="password" class="validate">
+        </div>
+        <div class="input-field col s6">
+          <input [(ngModel)]="c_pass" id="c_pass" name="c_pass" placeholder="Confirm Password" type="password" class="validate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input [(ngModel)]="email" id="email" name="email" placeholder="Email" type="email" class="validate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 mt-25">
+          <button class="btn waves-effect waves-light pulse" type="submit">Register Now
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+.section {
+  margin-left: 0px;
+  top: 0px;
+  left: 0px;
+  padding: 70px;
+  text-align: center;
+  background-image: url(https://health.clevelandclinic.org/wp-content/uploads/sites/3/2019/06/cropped-GettyImages-643764514.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+
+  .title {
+    font-size: 55px;
+    font-weight: 600;
+    color: white;
+  }
+
+  span {
+    color: white;
+  }
+}
+
+.container {
+  padding: 0 110px;
+
+  .genre-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+
+    .genre-value {
+      margin-top: 15px;
+    }
+
+  }
+}
+.center{
+  text-align: center;
+
+}
+.margin-bottom{
+  margin-bottom: 0;
+}
+.margin-top{
+  margin-top: 0;
+}
+button {
+  float: right;
+  background-color: #3f51b5;
+  color: #fff;
+  border-radius: 20px;
+}
+.margin-right{
+  right: 10px;
+}
+
+table {
+  width: 100%;
+  margin: 0 auto;
+}

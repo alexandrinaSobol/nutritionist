@@ -1,0 +1,186 @@
+.section {
+  margin-left: 0px;
+  top: 0px;
+  left: 0px;
+  height: 600px;
+  background-image: url(https://health.clevelandclinic.org/wp-content/uploads/sites/3/2019/06/cropped-GettyImages-643764514.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+
+  .ribbon {
+    display: inline-block;
+    height: 600px;
+    vertical-align: middle;
+    margin-left: calc((100% - 980px) * 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
+
+    .quote {
+      pointer-events: none;
+      padding-top: 163px;
+      padding-left: 50px;
+      width: 320px;
+
+      span {
+        font: normal normal normal 37px/1.4em droid-serif-w01-regular,
+          droid-serif-w02-regular, droid-serif-w10-regular, serif;
+        color: #555353;
+        line-height: 1.3em;
+      }
+    }
+
+    .button {
+      padding-left: 50px;
+      padding-top: 100px;
+
+      a {
+        background: #adc743;
+        color: white;
+      }
+    }
+  }
+}
+
+.container {
+  padding: 0 calc((100% - 980px) * 0.5);
+
+  .card {
+    position: relative;
+    max-height: 450px;
+
+    .profile {
+      display: inline-block;
+      width: 370px;
+      height: 450px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+   .info {
+      position: absolute;
+      width: calc(100% - 370px);
+      display: inline-block;
+      height: 450px;
+      top: 0;
+      background-color: rgba(240, 240, 240, 1);
+
+      .content {
+        left: 93px;
+        width: 387px;
+        position: absolute;
+        top: 117px;
+        
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 40.33%;
+  padding: 15px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+        .title {
+          font: normal normal normal 30px/1.4em droid-serif-w01-regular,
+            droid-serif-w02-regular, droid-serif-w10-regular, serif;
+          color: #555353;
+        }
+
+        p {
+          font: normal normal normal 15px/1.4em "open sans", sans-serif;
+          color: #555353;
+        }
+
+        a {
+          color: #899c40;
+          font-size: 17px;
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+
+  .blocks {
+    position: relative;
+    
+
+    .small {
+      margin-left: 222px;
+      position: absolute;
+      display: inline-block;
+      height: 148px;
+      width: 148px;
+      background-color: rgba(172, 162, 152, 1);
+      transition: all 0.4s ease 0s;
+
+      &:hover {
+        background-color: rgba(112, 105, 98, 1);
+      }
+
+      a {
+        width: 148px;
+        height: 148px;
+        text-align: center;
+        vertical-align: middle;
+        font: normal normal normal 24px/1.4em droid-serif-w01-regular,
+          droid-serif-w02-regular, droid-serif-w10-regular, serif;
+        color: white;
+        text-decoration: none;
+        display: table-cell;
+      }
+    }
+
+    .big {
+      display: inline-block;
+      width: 470px;
+      margin-left: 370px;
+      height: 250px;
+      background: rgba(173, 199, 67, 1);
+
+      .content {
+        margin-left: 75px;
+        width: 314px;
+        position: absolute;
+        top: 40px;
+        color: white;
+
+        h2 {
+          font: normal normal normal 22px/1.4em droid-serif-w01-regular,
+            droid-serif-w02-regular, droid-serif-w10-regular, serif;
+        }
+
+        p {
+          font: normal normal normal 15px/1.4em "open sans", sans-serif;
+        }
+      }
+    }
+  }
+
+  .imageBlock {
+    width: 748px;
+    height: 450px;
+
+    &.image-right {
+      margin-left: 232px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

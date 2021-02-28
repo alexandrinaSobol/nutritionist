@@ -1,0 +1,27 @@
+.header {
+    left: 0px;
+    margin-left: 0px;
+    min-width: 980px;
+    top: 0px;
+    margin: 0 calc((100% - 980px) * 0.5);
+
+    .logo {
+        display: inline-block;
+        background-color: rgba(173, 199, 67, 1);
+        padding: 40px 25px;
+        color: white;
+        font-size: 26px;
+    }
+
+    a {
+        margin-left: 15px;
+        color: #555353;
+        padding: 10px;
+        font: normal normal normal 15px/1.4em "open sans", sans-serif;
+    }
+
+    span.user {
+        float: right;
+        padding: 35px 0;
+    }
+}

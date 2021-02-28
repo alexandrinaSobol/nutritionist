@@ -1,0 +1,15 @@
+<div class="header">
+    <div class="logo">
+        Nutritionist
+    </div>
+
+    <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+    <a mat-button routerLink="/generator" routerLinkActive="active">Generator</a>
+    <a mat-button>About</a>
+
+    <span class="user">
+        <a *ngIf="authService.isLoggedIn()" mat-stroked-button routerLink="/dashboard">User dashboard</a>
+        <a *ngIf="!authService.isLoggedIn()" mat-button routerLink="/login">Login</a>
+        <a *ngIf="!authService.isLoggedIn()" mat-button routerLink="/register">Registration</a>
+    </span>
+</div>

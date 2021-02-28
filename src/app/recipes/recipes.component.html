@@ -1,0 +1,76 @@
+<section>
+    <div class="container">
+        <div class="carousel">
+            <!-- <input type="radio" name="slides" checked="checked" id="slide-1">
+            <input type="radio" name="slides" id="slide-2">
+            <input type="radio" name="slides" id="slide-3">
+            <input type="radio" name="slides" id="slide-4">
+            <input type="radio" name="slides" id="slide-5">
+            <input type="radio" name="slides" id="slide-6">
+            <input type="radio" name="slides" id="slide-7"> -->
+
+
+            <ul class="carousel__slides">
+                <li class="carousel__slide" *ngFor='let recipe of recipes'>
+                    <figure>
+                        <div class="Sex">
+                            <a href={{recipes[sel].url}}>
+                                <img src={{recipes[sel].image}}
+                                    alt="">
+                                    </a>
+                        </div>
+                        <figcaption>
+                         {{recipes[sel].description}}
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+        
+            <ul class="carousel__thumbnails">
+                <li *ngFor="let thumbnail of recipes" (click)="selected(thumbnail)">
+                    <label for="slide-1">
+                        <img src ={{thumbnail.image}} alt=""></label>
+                </li>
+            </ul>
+
+
+            <!-- <ul class="carousel__thumbnails">
+                <li>
+                    <label for="slide-1">
+                        <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F7690928.jpg&w=550&h=550&c=sc&poi=face&q=85"
+                            alt=""></label>
+                </li>
+                <l>
+                    <label for="slide-2"><img
+                            src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F7493339.jpg&w=550&h=550&c=sc&poi=face&q=85"
+                            alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-3"><img
+                            src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8114998.jpg&w=550&h=550&c=sc&poi=face&q=85"
+                            alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-4"><img
+                            src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8124245.jpg&w=550&h=550&c=sc&poi=face&q=85"
+                            alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-5"><img
+                            src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F6101407.jpg&w=550&h=550&c=sc&poi=face&q=85"
+                            alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-6"><img
+                            src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5458816.jpg&w=550&h=550&c=sc&poi=face&q=85"
+                            alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-7"><img
+                            src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8059219.jpg&w=550&h=550&c=sc&poi=face&q=85"
+                            alt=""></label>
+                </li>
+            </ul> -->
+        </div>
+    </div>
+</section>

@@ -1,0 +1,15 @@
+.container {
+  margin: 0 calc((100% - 980px) * 0.5);
+}
+
+.footer {
+  border-top: 1px solid #dcdcdc;
+  margin-top: 50px;
+  padding: 50px 0;
+  color: #555;
+
+  a {
+    text-decoration: none;
+    color: rgba(173, 199, 67, 1);
+  }
+}

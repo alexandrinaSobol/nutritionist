@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.float-right {
+  float: right !important;
+}
+
+.float-left {
+  float: left !important;
+}
+
+.flash-messages {
+  .flash-message {
+    width: auto;
+    right: 0;
+    top: 0;
+    padding: 12px;
+    margin-top: 20px;
+    margin-right: 24px;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 100;
+ 
+    &.alert-danger {
+      background-color: #dc3545;
+      color: #fff;
+    }
+    &.alert-success {
+      background-color: #28a745;
+      color: #fff;
+    }
+    &.alert-warning {
+      background-color: #ffc107;
+      color: #212529;
+    }
+  }
+}
