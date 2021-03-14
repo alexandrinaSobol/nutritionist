@@ -34,11 +34,24 @@ export class AuthService {
       {headers: headers}).pipe(map(res => res.json()));
   }
 
+  changePassword(newUserPassword) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(
+      this.baseUri + '/account/password',
+      newUserPassword,
+      {headers: headers}).pipe(map(res => res.json()));
+  }
+
   storeUser(token, user) {
     localStorage.setItem('token', token);
     localStorage.setItem('user', JSON.stringify(user));
     this.token = token;
     this.user = user;
+  }
+
+  getUser() {
+    return JSON.parse(localStorage.getItem('user'));
   }
 
   logout() {

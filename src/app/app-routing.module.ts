@@ -6,7 +6,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FoodComponent } from './food/food.component';
-import { SesionComponent } from './sesion/sesion.component';
+import { MealComponent } from './meal/meal.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { IsLoggedIn } from './isLogged.guard';
@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'food', component: FoodComponent },
-  { path: 'sesion', component: SesionComponent },
+  { path: 'meal', component: MealComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [IsLoggedIn] },
   { path: '**', redirectTo: '', pathMatch: 'full' },
   

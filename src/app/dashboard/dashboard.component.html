@@ -1,7 +1,62 @@
 <div class="container">
     <div class="jumbotron">
-        <h1>User dashboard</h1>
-        <br>
-        <button mat-stroked-button color="primary" (click)="logout()">Logout</button>
+        <div class="profile-header">
+            <h1 style="float:left;">Hello, {{user.fullname}}</h1>
+            <button mat-stroked-button color="primary" style="float:right;" (click)="logout()">Logout</button>
+        </div>
+        <mat-tab-group dynamicHeight>
+            <mat-tab label="Overview">
+                <section>
+                    <div class="example-label">Username</div>
+                    <div class="example-button-row">
+                        <p>{{user.username}}</p>
+                    </div>
+                </section>
+                <mat-divider></mat-divider>
+                <section>
+                    <div class="example-label">Fullname</div>
+                    <div class="example-button-row">
+                        <p>{{user.fullname}}</p>
+                    </div>
+                </section>
+                <mat-divider></mat-divider>
+                <section>
+                    <div class="example-label">Email</div>
+                    <div class="example-button-row">
+                        <p>{{user.email}}</p>
+                    </div>
+                </section>
+                <mat-divider></mat-divider>
+                <section>
+                    <div class="example-label">Register date</div>
+                    <div class="example-button-row">
+                        <p>{{user.dateregister | date:'medium'}}</p>
+                    </div>
+                </section>
+            </mat-tab>
+            <mat-tab label="Physical overview"> Content 3 </mat-tab>
+            <mat-tab label="Exercises"> Content 3 </mat-tab>
+            <mat-tab label="Settings">
+                <mat-grid-list cols="2" rowHeight="2:1">
+                    <mat-grid-tile>
+                        <form class="example-form" (submit)="changePassword()">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Actual password</mat-label>
+                                <input type="password" [(ngModel)]="password" matInput name="password">
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>New password</mat-label>
+                                <input type="password" [(ngModel)]="new_pass" matInput name="new_pass">
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Repeat new password</mat-label>
+                                <input type="password" [(ngModel)]="r_new_pass" matInput name="r_new_pass">
+                            </mat-form-field>
+                            <button mat-stroked-button color="primary">Change password</button>
+                        </form>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </mat-tab>
+        </mat-tab-group>
     </div>
 </div>

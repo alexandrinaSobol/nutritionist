@@ -19,14 +19,10 @@ import { GeneratorComponent } from './generator/generator.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { SesionComponent } from './sesion/sesion.component';
 import { FoodComponent } from './food/food.component';
 import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
-export function tokenGetter() {
-  return localStorage.getItem("token");
-}
+import { MealComponent } from './meal/meal.component';
 
 @NgModule({
   declarations: [
@@ -36,10 +32,10 @@ export function tokenGetter() {
     RecipesComponent,
     LoginComponent,
     RegisterComponent,
-    SesionComponent,
     FoodComponent,
     HeaderComponent,
-    DashboardComponent
+    DashboardComponent,
+    MealComponent
   ],
   imports: [
     HttpClientModule,

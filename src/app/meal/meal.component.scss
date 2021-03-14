@@ -1,0 +1,92 @@
+.container {
+    min-width: 980px;
+    margin: 0 calc((100% - 980px) * 0.5);
+
+    .button-container {
+        position: fixed;
+        bottom: 20px;
+        right: 70px;
+
+        button {
+            background: #adc743;
+        }
+    }
+}
+
+.section {
+    margin-left: 0px;
+    top: 0px;
+    left: 0px;
+    padding: 70px;
+    text-align: center;
+    background-image: url(https://health.clevelandclinic.org/wp-content/uploads/sites/3/2019/06/cropped-GettyImages-643764514.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+
+    .title {
+        font-size: 55px;
+        font-weight: 600;
+        color: white;
+    }
+
+    span {
+        color: white;
+    }
+}
+
+table {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.mat-form-field {
+    margin-top: 30px;
+    font-size: 14px;
+    width: 100%;
+}
+
+tr.example-detail-row {
+    height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+    background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+}
+
+.example-element-row td {
+    border-bottom-width: 0;
+}
+
+.example-element-detail {
+    overflow: hidden;
+    display: flex;
+}
+
+.example-element-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+}
+
+.example-element-symbol {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+}
+
+.example-element-description {
+    padding: 16px;
+}
+
+.example-element-description-attribution {
+    opacity: 0.5;
+}
