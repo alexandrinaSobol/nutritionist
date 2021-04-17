@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit {
   password: String;
   new_pass: String;
   r_new_pass: String;
+  displayedColumns: string[] = ['name', 'weight', 'calories', 'category'];
 
   constructor(
     private checkForm: CheckFormService,

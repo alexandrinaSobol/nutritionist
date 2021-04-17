@@ -1,6 +1,6 @@
-require('./models/User');
 require('./models/Product');
 require('./models/Meal');
+require('./models/User');
 
 const express = require('express');
 const cors = require('cors');
@@ -13,6 +13,7 @@ const dbConfig = require('./database/db');
 const foodRoute = require('../backend/routes/food.route');
 const accountRoute = require('../backend/routes/account.route');
 const mealRoute = require('../backend/routes/meal.route');
+const productRoute = require('../backend/routes/product.route');
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -42,6 +43,7 @@ app.use('/', express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
 app.use('/api', foodRoute);
 app.use('/api/account', accountRoute);
 app.use('/api/meal', mealRoute);
+app.use('/api/product', productRoute);
 
 // Create port
 const port = process.env.PORT || 4000;

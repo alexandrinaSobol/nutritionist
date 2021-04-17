@@ -11,6 +11,15 @@
             background: #adc743;
         }
     }
+
+    button {
+        &.redirectToProductsBtn {
+            margin-top: 50px;
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+        }
+    }
 }
 
 .section {
@@ -63,18 +72,23 @@ tr.example-element-row:not(.example-expanded-row):active {
     border-bottom-width: 0;
 }
 
-.example-element-detail {
+.element-detail-wrap {
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.element-details {
     display: flex;
 }
 
 .example-element-diagram {
-    min-width: 80px;
-    border: 2px solid black;
     padding: 8px;
-    font-weight: lighter;
     margin: 8px 0;
-    height: 104px;
+    width: 200px;
+    height: 150px;
+    background-size: cover;
+    background-position-y: center;
 }
 
 .example-element-symbol {
@@ -83,10 +97,10 @@ tr.example-element-row:not(.example-expanded-row):active {
     line-height: normal;
 }
 
-.example-element-description {
-    padding: 16px;
+.element-description {
+    margin: 15px;
 }
 
-.example-element-description-attribution {
-    opacity: 0.5;
+.element-ingredients-wrap {
+    margin-top: 15px;
 }

@@ -18,6 +18,10 @@
         color: #555353;
         padding: 10px;
         font: normal normal normal 15px/1.4em "open sans", sans-serif;
+
+        &.active {
+            background-color: #f5f5f5;
+        }
     }
 
     span.user {

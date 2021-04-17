@@ -1,0 +1,23 @@
+<div class="container">
+  <h2 mat-dialog-title>{{ dialogTitle }}</h2>
+  <form class="product-add__form">
+    <div class="product-add__inputs">
+      <mat-form-field class="product-add__field">
+        <input matInput name="name" placeholder="Name*" type="text" [(ngModel)]="name">
+      </mat-form-field>
+      <mat-form-field class="product-add__field">
+        <input matInput name="protein" placeholder="Protein / 100g*" type="number" [(ngModel)]="protein">
+      </mat-form-field>
+      <mat-form-field class="product-add__field">
+        <input matInput name="carbs" placeholder="Carbs / 100g*" type="number" [(ngModel)]="carbs">
+      </mat-form-field>
+      <mat-form-field class="product-add__field">
+        <input matInput name="fats" placeholder="Fats / 100g*" type="number" [(ngModel)]="fats">
+      </mat-form-field>
+      <mat-form-field class="product-add__field">
+        <input matInput name="calories" placeholder="Calories / 100g*" type="number" [(ngModel)]="calories">
+      </mat-form-field>
+    </div>
+  </form>
+  <button mat-raised-button (click)="addProduct()">Add product</button>
+</div>

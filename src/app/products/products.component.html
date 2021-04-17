@@ -1,0 +1,58 @@
+<div class="section">
+  <div class="title">Products</div>
+  <span>Lorem ipsum dolores sit amet</span>
+</div>
+
+<div class="container">
+  <div *ngIf="checkUserIsStaff()" class="button-container">
+    <button mat-fab [routerLink]="['/products/add']" color="primary">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="protein">
+      <th mat-header-cell *matHeaderCellDef> Protein </th>
+      <td mat-cell *matCellDef="let element"> {{element.protein}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="carbs">
+      <th mat-header-cell *matHeaderCellDef> Carbs </th>
+      <td mat-cell *matCellDef="let element"> {{element.carbs}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="fats">
+      <th mat-header-cell *matHeaderCellDef> Fats </th>
+      <td mat-cell *matCellDef="let element"> {{element.fats}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="calories">
+      <th mat-header-cell *matHeaderCellDef> Calories </th>
+      <td mat-cell *matCellDef="let element"> {{element.calories}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+        <button *ngIf="checkUserIsStaff()" mat-icon-button (click)="editProduct(element._id)" matTooltip="Edit this product">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button *ngIf="checkUserIsStaff()" mat-icon-button (click)="deleteProduct(element._id)" matTooltip="Remove this product">
+          <mat-icon>close</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>  
+  <button class="redirectToProductsBtn" mat-stroked-button color="primary" [routerLink]="['/meals']">Meals</button>
+</div>

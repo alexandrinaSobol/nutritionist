@@ -73,7 +73,6 @@ export class RegisterComponent implements OnInit {
     }
 
     this.authService.registerUser(user).subscribe(data => {
-      console.log(data.success);
       if (!data.success) {
         this.flashMessages.show(data.msg, {
           cssClass: 'alert-danger',

@@ -50,6 +50,11 @@ export class AuthService {
     this.user = user;
   }
 
+  updateUser(user) {
+    localStorage.setItem('user', JSON.stringify(user));
+    this.user = user;
+  }
+
   getUser() {
     return JSON.parse(localStorage.getItem('user'));
   }
@@ -62,5 +67,10 @@ export class AuthService {
 
   isLoggedIn() {
     return tokenNotExpired();
+  }
+
+  isStaff() {
+    this.user = this.getUser();
+    return this.isLoggedIn() && this.user && this.user.isstaff;
   }
 }

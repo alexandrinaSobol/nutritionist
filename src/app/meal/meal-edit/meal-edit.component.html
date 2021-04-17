@@ -1,0 +1,41 @@
+<div class="container">
+    <h2 mat-dialog-title>{{ dialogTitle }}</h2>
+    <form class="meal-add__form">
+        <mat-form-field class="meal-add__field">
+            <input matInput name="name" placeholder="Name*" type="text" [(ngModel)]="meal.name">
+        </mat-form-field>
+        <mat-form-field class="meal-add__field">
+            <input matInput name="category" placeholder="Category" type="text" [(ngModel)]="meal.category">
+        </mat-form-field>
+        <mat-form-field class="meal-add__field">
+            <input matInput name="imageUrl" placeholder="Image URL" type="text" [(ngModel)]="meal.imageUrl">
+        </mat-form-field>
+        <h3 class="meal-add__field-title meal-add__field-title--ingredients">Ingredients</h3>
+        <mat-list>
+            <mat-list-item *ngFor="let ingredient of meal.ingredients; let i = index">
+                {{ ingredient.name }} ({{ ingredient.weight }}g)
+                <button mat-icon-button (click)="onDeleteIngredient(i)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </mat-list-item>
+        </mat-list>
+        <div class="ingredients__add-fields">
+            <mat-form-field class="meal-add__field meal-add__field--medium">
+                <mat-select placeholder="Ingredient" #ingredientCurrent="ngModel" [(ngModel)]="ingredient"
+                    name="ingredient">
+                    <mat-option [value]="product" *ngFor="let product of products">{{ product.name }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="meal-add__field meal-add__field--medium">
+                <input matInput name="amount" placeholder="Amount" type="number" #ingredientAmountCurrent="ngModel"
+                    [(ngModel)]="ingredientAmount">
+            </mat-form-field>
+            <button class="meal-add__ingredients-button" type="button" mat-button color="primary"
+                (click)="onAddIngredient()"
+                [disabled]="(ingredientAmountCurrent.value <= 0 || !ingredientAmountCurrent.value) || !ingredientCurrent.value">
+                Add ingredient
+            </button>
+        </div>
+    </form>
+    <button class="meal-add__add-button" mat-raised-button (click)="onEditProduct()">Edit meal</button>
+</div>

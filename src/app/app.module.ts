@@ -23,6 +23,13 @@ import { FoodComponent } from './food/food.component';
 import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MealComponent } from './meal/meal.component';
+import { MealAddComponent } from './meal/meal-add/meal-add.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductsAddComponent } from './products/products-add/products-add.component';
+import { ProductsEditComponent } from './products/products-edit/products-edit.component';
+import { MealEditComponent } from './meal/meal-edit/meal-edit.component';
+import { AboutComponent } from './about/about.component';
+import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +42,14 @@ import { MealComponent } from './meal/meal.component';
     FoodComponent,
     HeaderComponent,
     DashboardComponent,
-    MealComponent
+    MealComponent,
+    MealAddComponent,
+    ProductsComponent,
+    ProductsAddComponent,
+    ProductsEditComponent,
+    MealEditComponent,
+    AboutComponent,
+    RecipeDetailsComponent
   ],
   imports: [
     HttpClientModule,

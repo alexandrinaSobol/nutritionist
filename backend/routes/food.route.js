@@ -2,10 +2,10 @@ const express = require('express');
 const app = express();
 const foodRoute = express.Router();
 
-// Employee model
+
 let Food = require('../models/Food');
 
-// Add Employee
+
 foodRoute.route('/create').post((req, res, next) => {
   Food.create(req.body, (error, data) => {
     if (error) {
@@ -16,7 +16,6 @@ foodRoute.route('/create').post((req, res, next) => {
   })
 });
 
-// Get All Employees
 foodRoute.route('/').get((req, res) => {
   Food.find((error, data) => {
     if (error) {
@@ -27,7 +26,6 @@ foodRoute.route('/').get((req, res) => {
   })
 })
 
-// Get single employee
 foodRoute.route('/read/:id').get((req, res) => {
   Food.findById(req.params.id, (error, data) => {
     if (error) {

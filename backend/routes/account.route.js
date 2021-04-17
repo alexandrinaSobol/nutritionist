@@ -14,6 +14,7 @@ router.post('/reg', (req, res) => {
         fullname: req.body.fullname,
         email: req.body.email,
         password: req.body.password,
+        isstaff: false,
         dateregister: new Date()
     });
 
@@ -48,7 +49,9 @@ router.post('/auth', (req, res) => {
                         username: user.username,
                         fullname: user.fullname,
                         email: user.email,
-                        dateregister: user.dateregister
+                        dateregister: user.dateregister,
+                        isstaff: user.isstaff,
+                        meals: user.meals
                     }
                 });
             } else

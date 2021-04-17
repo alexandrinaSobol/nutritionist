@@ -17,6 +17,6 @@ const GroupSchema = new mongoose.Schema({
     type : String,
     default : ''
   }
-}, {collection: "food"});
+}, {collection: "foods"});
 
 module.exports = mongoose.model('Food', GroupSchema);

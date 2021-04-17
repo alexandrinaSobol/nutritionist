@@ -1,0 +1,27 @@
+.container {
+    min-width: 980px;
+    margin: 0 calc((100% - 980px) * 0.5);
+
+    .aboutWrap {
+        margin: 60px 0;
+
+        .aboutTitle {
+            font-size: 36px;
+            font-style: italic;
+            font-weight: 600;
+            font-family: droid-serif-w01-regular;
+        }
+
+        .aboutContent {
+            margin-top: 15px;
+        }
+
+        .aboutImage {
+            background-image: url('https://static.wixstatic.com/media/1e47b2_65c22d9dd665412384741e6b0794c447.jpg');
+            background-size: cover;
+            height: 400px;
+            width: 300px;
+            margin-top: 30px;
+        }
+    }
+}

@@ -40,6 +40,6 @@ const MealSchema = new mongoose.Schema({
         type: String,
         default: ''
     }
-}, {collection: "meal"});
+}, {collection: "meals"});
 
 module.exports = mongoose.model('Meal', MealSchema);

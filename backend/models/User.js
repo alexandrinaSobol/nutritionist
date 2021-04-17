@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-const config = require('../database/db');
 
 const UserSchema = mongoose.Schema({
     username: {
@@ -21,7 +20,15 @@ const UserSchema = mongoose.Schema({
     dateregister: {
         type: Date,
         require: true
-    }
+    },
+    isstaff: {
+        type: Boolean,
+        default: false
+    },
+    meals: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Meal'
+    }]
 });
 
 UserSchema.methods.generateHash = function (password) {
@@ -36,7 +43,7 @@ const User = module.exports = mongoose.model('User', UserSchema);
 
 module.exports.getUserByUsername = function (username, callback) {
     const query = { username: username }
-    User.findOne(query, callback)
+    User.findOne(query).populate('meals').exec(callback)
 };
 
 module.exports.getUserById = function (id, callback) {

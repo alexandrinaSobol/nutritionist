@@ -1,0 +1,10 @@
+.container {
+    min-width: 980px;
+    margin: 0 calc((100% - 980px) * 0.5);
+}
+.meal-add__field {
+    display: block;
+}
+.meal-add__add-button {
+    margin-top: 25px;  
+}

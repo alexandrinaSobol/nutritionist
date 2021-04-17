@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from './../service/api.service';
+import { MealService } from '../service/meal.service';
 
 @Component({
   selector: 'app-generator',
@@ -15,10 +15,12 @@ export class GeneratorComponent implements OnInit {
   resultWomen: String;
   result: String;
   name: String;
-  foods: any = [];
-  displayedColumns: string[] = ['partea_zilei', 'name', 'calories', 'foto_link'];
+  meals: any = [];
+  displayedColumns: string[] = ['name', 'weight', 'calories', 'category'];
 
-  constructor(private _formBuilder: FormBuilder, private apiService: ApiService) { }
+  constructor(
+    private _formBuilder: FormBuilder,
+    private mealService: MealService) { }
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
@@ -49,8 +51,8 @@ export class GeneratorComponent implements OnInit {
       this.result = this.resultWomen;
     }
 
-    this.apiService.getFoods().subscribe((data) => {
-      this.foods = data;
+    this.mealService.getMeals().subscribe((data) => {
+      this.meals = data;
     });
   }
 }
