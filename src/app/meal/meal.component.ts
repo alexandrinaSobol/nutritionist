@@ -54,7 +54,8 @@ export class MealComponent implements AfterViewInit {
   }
 
   checkUserIsStaff() {
-    return this.authService.getUser().isstaff;
+    let user = this.authService.getUser(); 
+    return user && user.isstaff;
   }
 
   ngAfterViewInit(): void { }

@@ -10,4 +10,5 @@ export class Meal {
   calories: number;
   imageUrl: string;
   category: string;
+  recipe: string;
 }

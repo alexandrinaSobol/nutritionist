@@ -19,7 +19,7 @@ export class RecipeService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.get(
-      this.baseUri + '/recipes',
+      this.baseUri + '/recipe',
       { headers: headers }).pipe(map(res => res.json()));
   }
   
@@ -28,7 +28,7 @@ export class RecipeService {
     headers.append('Content-Type', 'application/json');
     
     let result = this.http.get(
-      this.baseUri + `/recipes/${recipeId}`,
+      this.baseUri + `/recipe/${recipeId}`,
       { headers: headers }).pipe(map(res => res.json()));
     return result;
   }
@@ -38,7 +38,7 @@ export class RecipeService {
     headers.append('Content-Type', 'application/json');
     
     return this.http.put(
-      this.baseUri + `/recipes/${recipeId}`,
+      this.baseUri + `/recipe/${recipeId}`,
       updateRecipe,
       { headers: headers }).pipe(map(res => res.json()));
   }

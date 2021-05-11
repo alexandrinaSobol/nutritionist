@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material';
+import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../service/auth.service';
+import { RecipeService } from '../service/recipe.service';
+import { Recipe } from '../_models/recipe.model';
+import { Router } from '@angular/router';
 //import { url } from 'inspector';
 
 @Component({
@@ -8,7 +14,27 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class RecipesComponent implements OnInit {
-  constructor() { }
+  dataSource: MatTableDataSource<Recipe>;
+  displayedColumns = ['name', 'imageUrl', 'prepareTime'];
+  constructor(
+    private recipeService: RecipeService,
+    private authService: AuthService,
+    private router: Router
+  ) { }
+  ngOnInit() { this.updateRecipeList();
+  
+  }
+  updateRecipeList() {
+    this.recipeService.getRecipes().subscribe(recipes => {
+      this.dataSource = new MatTableDataSource(recipes);
+    });
+  }
+  checkUserIsStaff() {
+    let user = this.authService.getUser(); 
+    return user && user.isstaff;
+  }
 
-  ngOnInit() { }
+  detailRecipes(recipeId) {
+    this.router.navigate([`recipes/details/${recipeId}`]);
+  }
 }

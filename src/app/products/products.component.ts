@@ -27,7 +27,8 @@ export class ProductsComponent implements OnInit {
   }
 
   checkUserIsStaff() {
-    return this.authService.getUser().isstaff;
+    let user = this.authService.getUser(); 
+    return user && user.isstaff;
   }
 
   editProduct(productId) {

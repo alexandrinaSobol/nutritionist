@@ -61,7 +61,7 @@
                         <button *ngIf="checkUserIsLogged()" mat-icon-button (click)="addFavorite(element._id)" matTooltip="Add to favorites" color="warn">
                             <mat-icon>favorite</mat-icon>
                         </button>
-                        <button  *ngIf="checkUserIsLogged()" [routerLink]="['/recipes']" mat-icon-button matTooltip="Open recipe">
+                        <button *ngIf="checkUserIsLogged()" [routerLink]="['/recipes/details/', element.recipe]" mat-icon-button matTooltip="Open recipe">
                             <mat-icon>receipt</mat-icon>
                         </button>
                         <button *ngIf="checkUserIsStaff()"  mat-icon-button (click)="editMeal(element._id)" matTooltip="Edit this meal">

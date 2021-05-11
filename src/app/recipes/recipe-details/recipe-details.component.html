@@ -1,98 +1,26 @@
-<!-- <section>
+<div class="container">
+    <section>
+        <div class="content">
+            <mat-carousel timings="250ms ease-in" [autoplay]="true" interval="5000" color="basic" [loop]="true"
+                [hideArrows]="false" [hideIndicators]="false" [useKeyboard]="true" [useMouseWheel]="false">
+                <mat-carousel-slide #matCarouselSlide *ngFor="let img of recipe.imageUrl; let i = index" [image]="img"
+                    overlayColor="#00000040" [hideOverlay]="false"></mat-carousel-slide>
+            </mat-carousel>
 
-    <div class="container">
-        <div class="carousel">
-             <input type="radio" name="slides" checked="checked" id="slide-1">
-            <input type="radio" name="slides" id="slide-2">
-            <input type="radio" name="slides" id="slide-3">
-            <input type="radio" name="slides" id="slide-4">
-            <input type="radio" name="slides" id="slide-5">
-            <input type="radio" name="slides" id="slide-6">
-            <input type="radio" name="slides" id="slide-7"> 
-            <ul class="carousel__slides">
-                <li class="carousel__slide" *ngFor='let recipe of recipes'>
-                    <figure>
-                        <div class="Sex">
-                            <a href={{recipes[sel].url}}>
-                                <img src={{recipes[sel].image}}
-                                    alt="">
-                                    </a>
-                        </div>
-                        <figcaption>
-                         {{recipes[sel].description}}
-                        </figcaption>
-                    </figure>
-                </li>
-            </ul>
-        
-            <ul class="carousel__thumbnails">
-                <li *ngFor="let thumbnail of recipes" (click)="selected(thumbnail)">
-                    <label for="slide-1">
-                        <img src ={{thumbnail.image}} alt=""></label>
-                </li>
-            </ul>
-
-
-             <ul class="carousel__thumbnails">
-                <li>
-                    <label for="slide-1">
-                        <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F7690928.jpg&w=550&h=550&c=sc&poi=face&q=85"
-                            alt=""></label>
-                </li>
-                <l>
-                    <label for="slide-2"><img
-                            src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F7493339.jpg&w=550&h=550&c=sc&poi=face&q=85"
-                            alt=""></label>
-                </li>
-                <li>
-                    <label for="slide-3"><img
-                            src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8114998.jpg&w=550&h=550&c=sc&poi=face&q=85"
-                            alt=""></label>
-                </li>
-                <li>
-                    <label for="slide-4"><img
-                            src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8124245.jpg&w=550&h=550&c=sc&poi=face&q=85"
-                            alt=""></label>
-                </li>
-                <li>
-                    <label for="slide-5"><img
-                            src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F6101407.jpg&w=550&h=550&c=sc&poi=face&q=85"
-                            alt=""></label>
-                </li>
-                <li>
-                    <label for="slide-6"><img
-                            src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5458816.jpg&w=550&h=550&c=sc&poi=face&q=85"
-                            alt=""></label>
-                </li>
-                <li>
-                    <label for="slide-7"><img
-                            src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8059219.jpg&w=550&h=550&c=sc&poi=face&q=85"
-                            alt=""></label>
-                </li> 
-            </ul> 
-        </div>
-    </div>
-</section> -->
-
-<ng-container matColumnDef="expandedDetail">
-    <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
-        <div class="element-detail-wrap"
-            [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-            <div class="element-details">
-                <div class="example-element-diagram"
-                    [ngStyle]="{'background-image': 'url(' + element.imageUrl + ')'}"></div>
-                <div class="element-description">
-                    <div class="example-element-protein">Protein: {{element.protein}} </div>
-                    <div class="example-element-carbs">Carbohydrates: {{element.carbs}} </div>
-                    <div class="example-element-fats">Fats: {{element.fats}} </div>
-                    <div class="element-ingredients-wrap">
-                        Ingredients:
-                        <ul>
-                            <li *ngFor="let ingredient of element.ingredients">{{ingredient.name}} ({{ingredient.weight}}g)</li>
-                        </ul>
-                    </div>
+            <div class="title">
+                {{recipe.title}}
+            </div>
+            <div class="prepareTime">
+                {{recipe.prepareTime}} - Prinz
+            </div>
+            <div class="steps">
+                <div class="stepsTitle">
+                    Etapele de pregatire:
                 </div>
+                <ol>
+                    <li *ngFor="let step of recipe.steps">{{step}}</li>
+                </ol>
             </div>
         </div>
-    </td>
-</ng-container>
+    </section>
+</div>

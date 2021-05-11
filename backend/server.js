@@ -14,6 +14,7 @@ const foodRoute = require('../backend/routes/food.route');
 const accountRoute = require('../backend/routes/account.route');
 const mealRoute = require('../backend/routes/meal.route');
 const productRoute = require('../backend/routes/product.route');
+const recipeRoute = require('../backend/routes/recipe.route');
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -44,6 +45,7 @@ app.use('/api', foodRoute);
 app.use('/api/account', accountRoute);
 app.use('/api/meal', mealRoute);
 app.use('/api/product', productRoute);
+app.use('/api/recipe', recipeRoute);
 
 // Create port
 const port = process.env.PORT || 4000;

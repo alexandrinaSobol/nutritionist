@@ -29,7 +29,13 @@ router.route('/').post((req, res, next) => {
                 if (error) {
                     res.json({ success: false, msg: error });
                 } else {
-                    res.json({ success: true, msg: "Mancare adaugata cu success" });
+                    Meal.update({ _id: mealId }, { recipe: data._id }, (error, data) => {
+                        if (error) {
+                            res.json({ success: false, msg: error });
+                        } else {
+                            res.json({ success: true, msg: "Mancare adaugata cu success" });
+                        }
+                    });
                 }
             })
         }

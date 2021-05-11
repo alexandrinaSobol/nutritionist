@@ -30,6 +30,8 @@ import { ProductsEditComponent } from './products/products-edit/products-edit.co
 import { MealEditComponent } from './meal/meal-edit/meal-edit.component';
 import { AboutComponent } from './about/about.component';
 import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.component';
+import { FacebookModule } from 'ngx-facebook';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.
     FormsModule,
     ReactiveFormsModule,
     FlashMessagesModule.forRoot(),
-    HttpModule
+    HttpModule,
+    FacebookModule.forRoot(),
+    MatCarouselModule.forRoot(),
   ],
   providers: [
     ApiService,

@@ -39,6 +39,10 @@ const MealSchema = new mongoose.Schema({
     category: {
         type: String,
         default: ''
+    },
+    recipe: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Recipe'
     }
 }, {collection: "meals"});
 

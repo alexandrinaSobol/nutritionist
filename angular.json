@@ -68,7 +68,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "nutritionist:build"
+            "browserTarget": "nutritionist:build",
+            "disableHostCheck": true
           },
           "configurations": {
             "production": {

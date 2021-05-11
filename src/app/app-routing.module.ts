@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'products/edit/:id', component: ProductsEditComponent, canActivate: [IsStaff] },
   { path: 'meals/edit/:id', component: MealEditComponent, canActivate: [IsStaff] },
   { path: 'recipes', component: RecipesComponent },
-  { path: 'recipes/:id', component: RecipeDetailsComponent },
+  { path: 'recipes/details/:id', component: RecipeDetailsComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];
 

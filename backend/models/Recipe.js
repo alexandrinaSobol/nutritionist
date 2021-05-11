@@ -15,7 +15,11 @@ const RecipeSchema = new mongoose.Schema({
     imageUrl: [{
         type: String,
         default: 'https://images.pexels.com/photos/616404/pexels-photo-616404.jpeg?h=350&auto=compress&cs=tinysrgb'
-    }]
+    }],
+    prepareTime: {
+        type: String,
+        default: '00:00'
+    }
 }, {collection: "recipes"});
 
 module.exports = mongoose.model('Recipe', RecipeSchema);
