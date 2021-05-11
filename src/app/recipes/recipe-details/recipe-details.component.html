@@ -8,10 +8,23 @@
             </mat-carousel>
 
             <div class="title">
-                {{recipe.title}}
+                {{recipe.name}}
             </div>
             <div class="prepareTime">
-                {{recipe.prepareTime}} - Prinz
+                {{recipe.prepareTime}} - {{convertMealCategoryInt(recipe?.meal?.category)}}
+            </div>
+            <div class="prepareTime">
+                {{recipe.meal?.weight}}g greutate · {{recipe.meal?.calories}}kkl calorii · {{recipe.meal?.carbs}}g
+                carbohidrati · {{recipe.meal?.fats}}g grasimi · {{recipe.meal?.protein}}g proteine
+            </div>
+            <div class="steps">
+                <div class="stepsTitle">
+                    Ingrediente:
+                </div>
+                <ul>
+                    <li *ngFor="let ingredient of recipe.meal?.ingredients">{{ingredient.name}} - {{ingredient.weight}}g
+                    </li>
+                </ul>
             </div>
             <div class="steps">
                 <div class="stepsTitle">
@@ -21,6 +34,9 @@
                     <li *ngFor="let step of recipe.steps">{{step}}</li>
                 </ol>
             </div>
+
+            <a *ngIf="authService.isStaff()" mat-button [routerLink]="['/recipes/edit', recipe._id]">Edit recipe</a>
+            <a *ngIf="authService.isStaff()" mat-button [routerLink]="['/meals/edit', mealId]">Edit meal</a>
         </div>
     </section>
 </div>

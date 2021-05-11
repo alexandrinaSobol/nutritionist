@@ -4,6 +4,9 @@ import { RecipeService } from 'src/app/service/recipe.service';
 import { Meal } from 'src/app/_models/meal.model';
 import { Product } from 'src/app/_models/product.meal';
 import { MatTableDataSource } from '@angular/material';
+import { Recipe } from 'src/app/_models/recipe.model';
+import { MealCategory } from 'src/app/_models/category.enum';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-recipe-details',
@@ -11,52 +14,29 @@ import { MatTableDataSource } from '@angular/material';
   styleUrls: ['./recipe-details.component.scss']
 })
 export class RecipeDetailsComponent implements OnInit {
-  dataSource: MatTableDataSource<Meal>;
+  recipe: Recipe = <Recipe>{};
+  mealId: any;
+
   constructor(
     private activatedRouter: ActivatedRoute,
     private recipeService: RecipeService,
+    private authService: AuthService
   ) { }
+  
+  convertMealCategoryInt(categoryNumber) {
+    return MealCategory[categoryNumber];
+  }
 
-  sel = 0;
+  ngOnInit() {
+    this.getRecipe();
+  }
 
-  getMeal() {
+  getRecipe() {
     const id = this.activatedRouter.snapshot.paramMap.get('id');
     this.recipeService.getRecipeById(id)
-      .subscribe();
-  }
-
-  recipe = {
-    title: "Omleta",
-    prepareTime: '1h:10m',
-    steps: [
-      'Luam ceva',
-      'Taiem totul pana la 0',
-      'Dupa care luam si obtinem',
-      'Doua ousoare dragalase si sexuale mimimimimimimi'
-    ],
-    imageUrl: [
-      'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F7690928.jpg',
-      'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F7493339.jpg',
-      'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8114998.jpg',
-      'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8124245.jpg',
-      'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F6101407.jpg',
-      'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5458816.jpg',
-      'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8059219.jpg'
-    ]
-  };
-
-  ngOnInit() { 
-    this.updateRecipeList();
-  
-  }
-  updateRecipeList() {
-    this.recipeService.getRecipes().subscribe(meals => {
-      this.dataSource = new MatTableDataSource(meals);
-    });
-  }
-
-  selected(event) {
-    this.sel = event.id;
-    console.log('EVENT -> ', event);
+      .subscribe(r => {
+        this.recipe = r;
+        this.mealId = r.meal._id;
+      });
   }
 }

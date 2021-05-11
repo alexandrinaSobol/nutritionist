@@ -3,26 +3,28 @@
   <span>Lorem ipsum dolores sit amet</span>
 </div>
 <div class="container">
-  <div *ngIf="checkUserIsStaff()" class="button-container">
-    <button mat-fab [routerLink]="['/products/add']" color="primary">
-      <mat-icon>add</mat-icon>
-    </button>
-  </div>
   <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
-
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Name </th>
       <td mat-cell *matCellDef="let element"> {{element.name}} </td>
     </ng-container>
     <ng-container matColumnDef="imageUrl">
-      <th mat-header-cell *matHeaderCellDef > Image </th>
-      <div class="example-element-diagram" *matCellDef="let element" (click)="detailRecipes(element._id)"
-        [ngStyle]="{'background-image': 'url(' + element.imageUrl + ')'}"></div>
+      <th mat-header-cell *matHeaderCellDef> Image </th>
+      <div class="example-element-diagram" *matCellDef="let element" [ngStyle]="{'background-image': 'url(' + element.imageUrl[0] + ')'}"></div>
     </ng-container>
 
     <ng-container matColumnDef="prepareTime">
       <th class="text-center" mat-header-cell *matHeaderCellDef> Timp de preparare </th>
       <td class="text-center" mat-cell *matCellDef="let element"> {{element.prepareTime}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th class="text-center" mat-header-cell *matHeaderCellDef> Actiuni </th>
+      <td class="text-center" mat-cell *matCellDef="let element">
+        <a mat-button [routerLink]="['/recipes/details', element._id]">
+          <mat-icon>visibility</mat-icon>
+        </a>
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

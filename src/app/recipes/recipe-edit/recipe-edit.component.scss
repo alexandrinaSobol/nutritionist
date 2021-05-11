@@ -1,0 +1,27 @@
+.container {
+    min-width: 980px;
+    margin: 0 calc((100% - 980px) * 0.5);
+}
+.recipe-add__field {
+    display: block;
+}
+.recipe-add__add-button {
+    margin-top: 25px;  
+}
+
+.small-image {
+    max-height: 200px;
+    max-width: 900px;
+}
+
+.images-list {
+    li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+}

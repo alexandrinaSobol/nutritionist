@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 
 export class RecipesComponent implements OnInit {
   dataSource: MatTableDataSource<Recipe>;
-  displayedColumns = ['name', 'imageUrl', 'prepareTime'];
+  displayedColumns = ['name', 'imageUrl', 'prepareTime', 'actions'];
   constructor(
     private recipeService: RecipeService,
     private authService: AuthService,
