@@ -1,15 +1,15 @@
 <div class="section">
-  <div class="title">Recipes</div>
-  <span>Lorem ipsum dolores sit amet</span>
+  <div class="title">Recete</div>
+  <span></span>
 </div>
 <div class="container">
   <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <th mat-header-cell *matHeaderCellDef> Nume </th>
       <td mat-cell *matCellDef="let element"> {{element.name}} </td>
     </ng-container>
     <ng-container matColumnDef="imageUrl">
-      <th mat-header-cell *matHeaderCellDef> Image </th>
+      <th mat-header-cell *matHeaderCellDef> Imagine </th>
       <div class="example-element-diagram" *matCellDef="let element" [ngStyle]="{'background-image': 'url(' + element.imageUrl[0] + ')'}"></div>
     </ng-container>
 
@@ -21,7 +21,7 @@
     <ng-container matColumnDef="actions">
       <th class="text-center" mat-header-cell *matHeaderCellDef> Actiuni </th>
       <td class="text-center" mat-cell *matCellDef="let element">
-        <a mat-button [routerLink]="['/recipes/details', element._id]">
+        <a mat-button [routerLink]="['/recipes/details', element._id]" matTooltip="Vezi receta">
           <mat-icon>visibility</mat-icon>
         </a>
       </td>
