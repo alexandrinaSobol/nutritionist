@@ -1,6 +1,6 @@
 <div class="section">
-  <div class="title">Products</div>
-  <span>Lorem ipsum dolores sit amet</span>
+  <div class="title">Produse</div>
+  <span></span>
 </div>
 
 <div class="container">
@@ -13,39 +13,39 @@
   <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
 
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <th mat-header-cell *matHeaderCellDef> Nume </th>
       <td mat-cell *matCellDef="let element"> {{element.name}} </td>
     </ng-container>
 
     <ng-container matColumnDef="protein">
-      <th mat-header-cell *matHeaderCellDef> Protein </th>
+      <th mat-header-cell *matHeaderCellDef> Proteine </th>
       <td mat-cell *matCellDef="let element"> {{element.protein}} </td>
     </ng-container>
 
     <!-- Weight Column -->
     <ng-container matColumnDef="carbs">
-      <th mat-header-cell *matHeaderCellDef> Carbs </th>
+      <th mat-header-cell *matHeaderCellDef> Carbohidrați </th>
       <td mat-cell *matCellDef="let element"> {{element.carbs}} </td>
     </ng-container>
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="fats">
-      <th mat-header-cell *matHeaderCellDef> Fats </th>
+      <th mat-header-cell *matHeaderCellDef> Lipide </th>
       <td mat-cell *matCellDef="let element"> {{element.fats}} </td>
     </ng-container>
 
     <ng-container matColumnDef="calories">
-      <th mat-header-cell *matHeaderCellDef> Calories </th>
+      <th mat-header-cell *matHeaderCellDef> Calorii </th>
       <td mat-cell *matCellDef="let element"> {{element.calories}} </td>
     </ng-container>
 
     <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <th mat-header-cell *matHeaderCellDef> Acțiuni </th>
       <td mat-cell *matCellDef="let element">
-        <button *ngIf="checkUserIsStaff()" mat-icon-button (click)="editProduct(element._id)" matTooltip="Edit this product">
+        <button *ngIf="checkUserIsStaff()" mat-icon-button (click)="editProduct(element._id)" matTooltip="Editează produsul">
           <mat-icon>edit</mat-icon>
         </button>
-        <button *ngIf="checkUserIsStaff()" mat-icon-button (click)="deleteProduct(element._id)" matTooltip="Remove this product">
+        <button *ngIf="checkUserIsStaff()" mat-icon-button (click)="deleteProduct(element._id)" matTooltip="Șterge produsul">
           <mat-icon>close</mat-icon>
         </button>
       </td>

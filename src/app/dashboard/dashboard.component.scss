@@ -28,7 +28,7 @@ section {
     display: table-cell;
     font-size: 14px;
     margin-left: 8px;
-    min-width: 120px;
+    min-width: 140px;
 }
 
 .example-button-row {
@@ -65,4 +65,8 @@ section {
 
 .savedMealsTable {
     width: 100%;
+}
+
+.margin-right {
+    right: 10px;
 }

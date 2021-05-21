@@ -1,20 +1,21 @@
 <div class="container">
     <div class="jumbotron">
         <div class="profile-header">
-            <h1 style="float:left;">Hello, {{user.fullname}}</h1>
-            <button mat-stroked-button color="primary" style="float:right;" (click)="logout()">Logout</button>
+            <h1 style="float:left;">Salut, {{user.fullname}}</h1>
+            <button mat-stroked-button color="primary" style="float:right;" (click)="logout()">Deconectare</button>
         </div>
         <mat-tab-group dynamicHeight>
-            <mat-tab label="Overview">
+            <mat-tab label="Date generale">
                 <section>
-                    <div class="example-label">Username</div>
+                    <div class="example-label">Nume de utilizator </div>
+                    <br>
                     <div class="example-button-row">
                         <p>{{user.username}}</p>
                     </div>
                 </section>
                 <mat-divider></mat-divider>
                 <section>
-                    <div class="example-label">Fullname</div>
+                    <div class="example-label">Numele complet</div>
                     <div class="example-button-row">
                         <p>{{user.fullname}}</p>
                     </div>
@@ -28,52 +29,64 @@
                 </section>
                 <mat-divider></mat-divider>
                 <section>
-                    <div class="example-label">Register date</div>
+                    <div class="example-label">Data de înregistrare</div>
                     <div class="example-button-row">
                         <p>{{user.dateregister | date:'medium'}}</p>
                     </div>
                 </section>
             </mat-tab>
-            <mat-tab label="Physical overview"> To be added! </mat-tab>
-            <mat-tab label="Saved meals">
+            <mat-tab label="Mese salvate">
                 <table mat-table [dataSource]="user.meals" class="savedMealsTable">
                     <ng-container matColumnDef="name">
-                        <th mat-header-cell *matHeaderCellDef> Name </th>
-                        <td mat-cell *matCellDef="let meal"> {{meal.name}} </td>
+                        <th mat-header-cell *matHeaderCellDef> Nume </th>
+                        <td mat-cell *matCellDef="let meal">{{meal.name}}</td>
                     </ng-container>
                     <ng-container matColumnDef="weight">
-                        <th mat-header-cell *matHeaderCellDef> Weight </th>
+                        <th mat-header-cell *matHeaderCellDef> Greutate (g) </th>
                         <td mat-cell *matCellDef="let meal">{{meal.weight}}</td>
                     </ng-container>
                     <ng-container matColumnDef="calories">
-                        <th mat-header-cell *matHeaderCellDef> Calories </th>
-                        <td mat-cell *matCellDef="let meal"> {{meal.calories}} </td>
+                        <th mat-header-cell *matHeaderCellDef> Calorii (kkl) </th>
+                        <td mat-cell *matCellDef="let meal">{{meal.calories}}</td>
                     </ng-container>
                     <ng-container matColumnDef="category">
-                        <th mat-header-cell *matHeaderCellDef> Day time </th>
-                        <td mat-cell *matCellDef="let meal"> {{meal.category}} </td>
+                        <th mat-header-cell *matHeaderCellDef> Partea zilei </th>
+                        <td mat-cell *matCellDef="let meal"> {{convertMealCategoryInt(meal.category)}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="actions">
+                        <th mat-header-cell *matHeaderCellDef> Acțiuni </th>
+                        <td mat-cell *matCellDef="let meal">
+                            <button class="margin-right" mat-icon-button
+                                (click)="removeFavorite(meal._id)" matTooltip="Remove from favorites">
+                                <mat-icon>favorite_border</mat-icon>
+                            </button>
+                            <button mat-icon-button (click)="openReceipt(meal.recipe)"
+                                matTooltip="Open the receipt">
+                                <mat-icon>receipt</mat-icon>
+                            </button>
+                        </td>
                     </ng-container>
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
             </mat-tab>
-            <mat-tab label="Settings">
+            <mat-tab label="Setări">
                 <mat-grid-list cols="2" rowHeight="2:1">
                     <mat-grid-tile>
                         <form class="example-form" (submit)="changePassword()">
                             <mat-form-field class="example-full-width">
-                                <mat-label>Actual password</mat-label>
+                                <mat-label>Parola actuală</mat-label>
                                 <input type="password" [(ngModel)]="password" matInput name="password">
                             </mat-form-field>
                             <mat-form-field class="example-full-width">
-                                <mat-label>New password</mat-label>
+                                <mat-label>Parola nouă</mat-label>
                                 <input type="password" [(ngModel)]="new_pass" matInput name="new_pass">
                             </mat-form-field>
                             <mat-form-field class="example-full-width">
-                                <mat-label>Repeat new password</mat-label>
+                                <mat-label>Reintrodu noua parola</mat-label>
                                 <input type="password" [(ngModel)]="r_new_pass" matInput name="r_new_pass">
                             </mat-form-field>
-                            <button mat-stroked-button color="primary">Change password</button>
+                            <button mat-stroked-button color="primary">Schimbă parola</button>
                         </form>
                     </mat-grid-tile>
                 </mat-grid-list>

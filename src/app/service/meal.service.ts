@@ -24,6 +24,19 @@ export class MealService {
       { headers: headers }).pipe(map(res => res.json()));
   }
 
+  getMealPlan(caloriesNumber: Number) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    
+    let result = this.http.post(
+      this.baseUri + '/meal/plan',
+      {
+        calories: caloriesNumber
+      },
+      { headers: headers }).pipe(map(res => res.json()));
+    return result;
+  }
+
   getMeals() {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -68,6 +81,19 @@ export class MealService {
     
     let result = this.http.put(
       this.baseUri + `/meal/${mealId}/favorite`,
+      {
+        userId: userId
+      },
+      { headers: headers }).pipe(map(res => res.json()));
+    return result;
+  }
+
+  removeFavoriteMeal(userId: string, mealId: string) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    
+    let result = this.http.put(
+      this.baseUri + `/meal/${mealId}/unfavorite`,
       {
         userId: userId
       },

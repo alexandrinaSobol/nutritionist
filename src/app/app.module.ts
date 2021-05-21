@@ -32,6 +32,7 @@ import { AboutComponent } from './about/about.component';
 import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.component';
 import { FacebookModule } from 'ngx-facebook';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
     ProductsEditComponent,
     MealEditComponent,
     AboutComponent,
-    RecipeDetailsComponent
+    RecipeDetailsComponent,
+    RecipeEditComponent
   ],
   imports: [
     HttpClientModule,

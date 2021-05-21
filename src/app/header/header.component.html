@@ -3,15 +3,15 @@
         Nutritionist 
     </div>
 
-    <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+    <a mat-button routerLink="/home" routerLinkActive="active">Acasă</a>
     <a mat-button routerLink="/generator" routerLinkActive="active">Generator</a>
-    <a mat-button routerLink="/meals" routerLinkActive="active">Meals</a>
-    <a mat-button routerLink="/recipes" routerLinkActive="active">Recipes</a>
-    <a mat-button routerLink="/about" routerLinkActive="active">About</a>
+    <a mat-button routerLink="/meals" routerLinkActive="active">Mese</a>
+    <a mat-button routerLink="/recipes" routerLinkActive="active">Rețete</a>
+    <a mat-button routerLink="/about" routerLinkActive="active">Despre</a>
 
     <span class="user">
-        <a *ngIf="authService.isLoggedIn()" mat-stroked-button routerLink="/dashboard">User dashboard</a>
-        <a *ngIf="!authService.isLoggedIn()" mat-button routerLink="/login">Login</a>
-        <a *ngIf="!authService.isLoggedIn()" mat-button routerLink="/register">Registration</a>
+        <a *ngIf="authService.isLoggedIn()" mat-stroked-button routerLink="/dashboard">Bordul Utilizatorului</a>
+        <a *ngIf="!authService.isLoggedIn()" mat-button routerLink="/login">Logare</a>
+        <a *ngIf="!authService.isLoggedIn()" mat-button routerLink="/register">Înregistrare</a>
     </span>
 </div>

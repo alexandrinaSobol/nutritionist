@@ -1,11 +1,12 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import {Component, AfterViewInit} from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { AuthService } from '../service/auth.service';
 import { MealService } from '../service/meal.service';
 import { Meal } from '../_models/meal.model';
+import { MealCategory } from '../_models/category.enum';
 
 @Component({
   selector: 'app-meal',
@@ -13,8 +14,8 @@ import { Meal } from '../_models/meal.model';
   styleUrls: ['./meal.component.scss'],
   animations: [
     trigger('detailExpand', [
-      state('collapsed', style({height: '0px', minHeight: '0'})),
-      state('expanded', style({height: '*'})),
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
       transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
     ]),
   ],
@@ -37,6 +38,10 @@ export class MealComponent implements AfterViewInit {
     this.updateMealList();
   }
 
+  convertMealCategoryInt(categoryNumber) {
+    return MealCategory[categoryNumber];
+  }
+
   deleteMeal(productId) {
     this.mealService.deleteMeal(productId).subscribe(data => {
       this.updateMealList();
@@ -54,8 +59,8 @@ export class MealComponent implements AfterViewInit {
   }
 
   checkUserIsStaff() {
-    let user = this.authService.getUser(); 
-    return user && user.isstaff;
+    let user = this.authService.getUser();
+    return this.checkUserIsLogged() && user && user.isstaff;
   }
 
   ngAfterViewInit(): void { }

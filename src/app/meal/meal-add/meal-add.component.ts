@@ -43,8 +43,11 @@ export class MealAddComponent implements OnInit {
   }
   
   onAddMeal() {
+    if (!this.name || !this.category || !this.imageUrl) {
+      return;
+    }
     this.meal.name = this.name;
-    this.meal.category = this.category.trim();
+    this.meal.category = Number(this.category);
     this.meal.imageUrl = this.imageUrl.trim();
     this.meal.ingredients = this.ingredients;
     this.meal.weight = this.weightTotal;

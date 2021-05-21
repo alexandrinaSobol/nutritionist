@@ -2,25 +2,25 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <div class="header-image">
-	<h2>Register</h2>
+	<h2>Înregistrare</h2>
 </div>
 <div class="container pt-60">
   <div class="row">
     <form class="col s12" (submit)="userRegister()">
       <div class="row">
         <div class="input-field col s6">
-          <input [(ngModel)]="username" id="username" name="username" type="text" placeholder="Username" class="validate">
+          <input [(ngModel)]="username" id="username" name="username" type="text" placeholder="Numele Utilizatorului" class="validate">
         </div>
         <div class="input-field col s6">
-          <input [(ngModel)]="fullname" id="fullname" name="fullname" placeholder="Full Name" type="text" class="validate">
+          <input [(ngModel)]="fullname" id="fullname" name="fullname" placeholder="Numele complet" type="text" class="validate">
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input [(ngModel)]="pass" id="pass" name="pass" placeholder="Password" type="password" class="validate">
+          <input [(ngModel)]="pass" id="pass" name="pass" placeholder="Parola" type="password" class="validate">
         </div>
         <div class="input-field col s6">
-          <input [(ngModel)]="c_pass" id="c_pass" name="c_pass" placeholder="Confirm Password" type="password" class="validate">
+          <input [(ngModel)]="c_pass" id="c_pass" name="c_pass" placeholder="Confirmă parola" type="password" class="validate">
         </div>
       </div>
       <div class="row">
@@ -30,7 +30,7 @@
       </div>
       <div class="row">
         <div class="col s12 mt-25">
-          <button class="btn waves-effect waves-light pulse" type="submit">Register Now
+          <button class="btn waves-effect waves-light pulse" type="submit">Înregistrează-te acum!
             <i class="material-icons right">send</i>
           </button>
         </div>

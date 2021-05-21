@@ -1,6 +1,6 @@
 <div class="container">
     <form class="recipe-add__form">
-        <h3 class="recipe-add__field-title recipe-add__field-title--steps">Steps</h3>
+        <h3 class="recipe-add__field-title recipe-add__field-title--steps">Pasul</h3>
         <ol>
             <li *ngFor="let step of recipe.steps; let i = index">
                 {{ step }}
@@ -11,17 +11,17 @@
         </ol>
         <div class="steps__add-fields">
             <mat-form-field class="recipe-add__field recipe-add__field--medium">
-                <input matInput name="newStep" placeholder="Step" type="text" #newStepCurrent="ngModel"
+                <input matInput name="newStep" placeholder="Pasul" type="text" #newStepCurrent="ngModel"
                     [(ngModel)]="newStep">
             </mat-form-field>
             <button type="button" mat-button color="primary"
                 (click)="onAddNewStep()"
                 [disabled]="!newStepCurrent.value">
-                Add step
+                Adaugă pasul
             </button>
         </div>
 
-        <h3 class="recipe-add__field-title recipe-add__field-title--images">Images</h3>
+        <h3 class="recipe-add__field-title recipe-add__field-title--images">Imagine</h3>
         <ul class="images-list">
             <li *ngFor="let url of recipe.imageUrl; let i = index">
                 <img class="small-image" src={{url}} alt="">
@@ -32,7 +32,7 @@
         </ul>
         <div class="images__add-fields">
             <mat-form-field class="recipe-add__field recipe-add__field--medium">
-                <input matInput name="newImageUrl" placeholder="Image Url" type="text" #newImageUrlCurrent="ngModel"
+                <input matInput name="newImageUrl" placeholder="Urul imaginei" type="text" #newImageUrlCurrent="ngModel"
                     [(ngModel)]="newImageUrl">
             </mat-form-field>
             <button type="button" mat-button color="primary"
@@ -42,10 +42,10 @@
             </button>
         </div>
 
-        <h3 class="recipe-add__field-title recipe-add__field-title--prepareTime">Prepare time</h3>
+        <h3 class="recipe-add__field-title recipe-add__field-title--prepareTime">Timpul de preparare</h3>
         <mat-form-field class="recipe-add__field">
-            <input matInput name="prepareTime" placeholder="Prepare Time" type="text" [(ngModel)]="recipe.prepareTime" required>
+            <input matInput name="prepareTime" placeholder="Timpul de preparare" type="text" [(ngModel)]="recipe.prepareTime" required>
         </mat-form-field>
     </form>
-    <button class="recipe-add__add-button" mat-raised-button (click)="onEditRecipe()">Update recipe</button>
+    <button class="recipe-add__add-button" mat-raised-button (click)="onEditRecipe()">Actualizați rețeta</button>
 </div>

@@ -3,21 +3,21 @@
     <form class="product-add__form">
       <div class="product-add__inputs">
         <mat-form-field class="product-add__field">
-          <input matInput name="name" placeholder="Name*" type="text" [(ngModel)]="product.name">
+          <input matInput name="name" placeholder="Nume*" type="text" [(ngModel)]="product.name">
         </mat-form-field>
         <mat-form-field class="product-add__field">
-          <input matInput name="protein" placeholder="Protein / 100g*" type="number" [(ngModel)]="product.protein">
+          <input matInput name="protein" placeholder="Proteine / 100g*" type="number" [(ngModel)]="product.protein">
         </mat-form-field>
         <mat-form-field class="product-add__field">
-          <input matInput name="carbs" placeholder="Carbs / 100g*" type="number" [(ngModel)]="product.carbs">
+          <input matInput name="carbs" placeholder="Carbohidrați / 100g*" type="number" [(ngModel)]="product.carbs">
         </mat-form-field>
         <mat-form-field class="product-add__field">
-          <input matInput name="fats" placeholder="Fats / 100g*" type="number" [(ngModel)]="product.fats">
+          <input matInput name="fats" placeholder="Lipide / 100g*" type="number" [(ngModel)]="product.fats">
         </mat-form-field>
         <mat-form-field class="product-add__field">
-          <input matInput name="calories" placeholder="Calories / 100g*" type="number" [(ngModel)]="product.calories">
+          <input matInput name="calories" placeholder="Caloriei / 100g*" type="number" [(ngModel)]="product.calories">
         </mat-form-field>
       </div>
     </form>
-    <button mat-raised-button (click)="editProduct()">Edit product</button>
+    <button mat-raised-button (click)="editProduct()">Editează produsul</button>
   </div>

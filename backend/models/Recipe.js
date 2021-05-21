@@ -18,7 +18,7 @@ const RecipeSchema = new mongoose.Schema({
     }],
     prepareTime: {
         type: String,
-        default: '00:00'
+        default: 'NaN'
     }
 }, {collection: "recipes"});
 

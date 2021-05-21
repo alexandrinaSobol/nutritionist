@@ -20,19 +20,21 @@ router.route('/').post((req, res, next) => {
         if (error) {
             res.json({ success: false, msg: error });
         } else {
-            res.json({ success: true, msg: "Receta adaugata cu succes" });
+            res.json({ success: true, msg: "Reteta adaugata cu succes" });
         }
     })
 });
 
 router.route('/:id').get((req, res) => {
-    Recipe.findById(req.params.id, (error, data) => {
-        if (error) {
-            res.send(400);
-        } else {
-            res.json(data);
-        }
-    })
+    Recipe.findById(req.params.id)
+        .populate('meal')
+        .exec((error, data) => {
+            if (error) {
+                res.send(400);
+            } else {
+                res.json(data);
+            }
+        })
 });
 
 router.route('/:id').put((req, res) => {
@@ -43,7 +45,7 @@ router.route('/:id').put((req, res) => {
         if (error) {
             res.json({ success: false, msg: error });
         } else {
-            res.json({ success: true, msg: "Receta actualizat cu succes" });
+            res.json({ success: true, msg: "Reteta actualizat cu succes" });
         }
     });
 });
@@ -57,7 +59,7 @@ router.route('/:id').post((req, res) => {
                 if (error) {
                     res.json({ success: false, msg: error });
                 } else {
-                    res.json({ success: true, msg: "Receta sters cu succes" });
+                    res.json({ success: true, msg: "Reteta sters cu succes" });
                 }
             });
         }

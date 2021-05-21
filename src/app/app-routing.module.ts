@@ -17,6 +17,7 @@ import { ProductsEditComponent } from './products/products-edit/products-edit.co
 import { IsStaff } from './isStaff.guard';
 import { AboutComponent } from './about/about.component';
 import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'meals/edit/:id', component: MealEditComponent, canActivate: [IsStaff] },
   { path: 'recipes', component: RecipesComponent },
   { path: 'recipes/details/:id', component: RecipeDetailsComponent },
+  { path: 'recipes/edit/:id', component: RecipeEditComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];
 

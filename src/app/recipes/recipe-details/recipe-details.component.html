@@ -29,14 +29,14 @@
             <div class="steps">
                 <div class="stepsTitle">
                     Etapele de pregatire:
-                </div>
+                    </div>
                 <ol>
                     <li *ngFor="let step of recipe.steps">{{step}}</li>
                 </ol>
             </div>
 
-            <a *ngIf="authService.isStaff()" mat-button [routerLink]="['/recipes/edit', recipe._id]">Edit recipe</a>
-            <a *ngIf="authService.isStaff()" mat-button [routerLink]="['/meals/edit', mealId]">Edit meal</a>
+            <a *ngIf="authService.isStaff()" mat-button [routerLink]="['/recipes/edit', recipe._id]">Editează rețeta</a>
+            <a *ngIf="authService.isStaff()" mat-button [routerLink]="['/meals/edit', mealId]">Editează masa</a>
         </div>
     </section>
 </div>

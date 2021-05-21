@@ -37,8 +37,8 @@ const MealSchema = new mongoose.Schema({
         default: 'https://images.pexels.com/photos/616404/pexels-photo-616404.jpeg?h=350&auto=compress&cs=tinysrgb'
     },
     category: {
-        type: String,
-        default: ''
+        type: Number,
+        default: 0
     },
     recipe: {
         type: mongoose.Schema.Types.ObjectId,

@@ -9,6 +9,7 @@ export class Meal {
   fats: number;
   calories: number;
   imageUrl: string;
-  category: string;
+  // 1 - mic dejun, 2 - pranz, 3 - cina
+  category: number;
   recipe: string;
 }
